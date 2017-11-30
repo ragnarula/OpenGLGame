@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Display.h"
 
-#include <GL/glew.h>
+#include <gl/glew.h>
 #include <iostream>
 
 CDisplay::CDisplay(int width, int height, const std::string &title) {

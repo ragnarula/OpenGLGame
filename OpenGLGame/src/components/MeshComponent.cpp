@@ -1,8 +1,10 @@
 #include "stdafx.h"
 #include "MeshComponent.h"
+#include "components/WorldObject.h"
 
-CMeshComponent::CMeshComponent(const CMeshProperties & Mesh) : 
-	m_MeshProperties(Mesh)
+CMeshComponent::CMeshComponent(CWorldObject& Owner) :
+	m_Owner(Owner),
+	m_MeshProperties({0, 0, 0})
 {
 }
 
@@ -29,4 +31,13 @@ size_t CMeshComponent::GetVertexCount() const
 bool CMeshComponent::IsIndexed() const
 {
 	return m_MeshProperties.m_VBO > -1;
+}
+
+void CMeshComponent::Initialise(const CMeshProperties & Mesh)
+{
+	m_MeshProperties = Mesh;
+}
+
+void CMeshComponent::Tick(float DeltaTime)
+{
 }

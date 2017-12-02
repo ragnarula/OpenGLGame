@@ -60,6 +60,12 @@
     <ClInclude Include="src\shaders\MainShader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\rendering\Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\WorldObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

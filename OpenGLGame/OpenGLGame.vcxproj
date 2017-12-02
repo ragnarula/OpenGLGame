@@ -23,7 +23,7 @@
     <ProjectGuid>{4304E8F3-F1B7-4644-8993-018186899C6A}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>OpenGLGame</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.10240.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -171,6 +171,8 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\components\WorldObject.h" />
+    <ClInclude Include="src\rendering\Camera.h" />
     <ClInclude Include="src\shaders\MainShader.h" />
     <ClInclude Include="src\rendering\LightManager.h" />
     <ClInclude Include="src\components\LightComponent.h" />

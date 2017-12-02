@@ -3,31 +3,12 @@
 #include "glm/gtc/matrix_transform.hpp"
 
 
-CTransformComponent::CTransformComponent()
+glm::mat4 CTransformComponent::GetMatrix(glm::mat4 Base)
 {
-}
-
-
-CTransformComponent::~CTransformComponent()
-{
-}
-
-void CTransformComponent::Translate(glm::vec3 Translation)
-{
-	m_Transform = glm::translate(m_Transform, Translation);
-}
-
-void CTransformComponent::Scale(glm::vec3 Axis)
-{
-	m_Transform = glm::scale(m_Transform, Axis);
-}
-
-void CTransformComponent::Rotate(float Degrees, glm::vec3 Axis)
-{
-	m_Transform = glm::rotate(m_Transform, glm::radians(Degrees), Axis);
-}
-
-glm::mat4 CTransformComponent::GetTransform() const
-{
-	return m_Transform;
+	Base = glm::translate(Base, Position);
+	Base = glm::rotate(Base, Rotation.x, glm::vec3(1.0, 0.0, 0.0));
+	Base = glm::rotate(Base, Rotation.y, glm::vec3(0.0, 1.0, 0.0));
+	Base = glm::rotate(Base, Rotation.z, glm::vec3(0.0, 0.0, 1.0));
+	Base = glm::scale(Base, Scale);
+	return Base;
 }

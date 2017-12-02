@@ -4,16 +4,11 @@
 
 class CTransformComponent
 {
-	glm::mat4 m_Transform;
-
 public:
-	CTransformComponent();
-	~CTransformComponent();
+	glm::vec3 Position;
+	glm::vec3 Scale;
+	glm::vec3 Rotation;
 
-	void Translate(glm::vec3 Translation);
-	void Scale(glm::vec3 Axis);
-	void Rotate(float Degrees, glm::vec3 Axis);
-
-	glm::mat4 GetTransform() const;
+	glm::mat4 GetMatrix(glm::mat4 Base = glm::mat4(1));
 };
 

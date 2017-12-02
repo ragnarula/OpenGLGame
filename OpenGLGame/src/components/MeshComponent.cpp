@@ -15,22 +15,22 @@ CMeshComponent::~CMeshComponent()
 
 GLuint CMeshComponent::GetVAO() const
 {
-	return m_MeshProperties.m_VAO;
+	return m_MeshProperties.VAO;
 }
 
 GLuint CMeshComponent::GetVBO() const
 {
-	return m_MeshProperties.m_VBO;
+	return m_MeshProperties.VBO;
 }
 
 size_t CMeshComponent::GetVertexCount() const
 {
-	return m_MeshProperties.m_VertexCount;
+	return m_MeshProperties.VertexCount;
 }
 
 bool CMeshComponent::IsIndexed() const
 {
-	return m_MeshProperties.m_VBO > -1;
+	return m_MeshProperties.VBO > -1;
 }
 
 void CMeshComponent::Initialise(const CMeshProperties & Mesh)

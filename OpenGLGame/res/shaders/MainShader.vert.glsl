@@ -1,4 +1,4 @@
-#version 400
+#version 440
 
 layout (location = 0) in vec3 iPosition;
 layout (location = 1) in vec3 iColour;
@@ -12,14 +12,20 @@ struct LightInfo
 	vec3 Direction;
 };
 
-uniform LightInfo Lights[16];
+layout (std430, binding = 1) buffer LightsBuffer {
+    LightInfo Lights[16];
+};
+
 uniform uint NumLights;
 
 uniform mat4 MVP;
 uniform mat4 MV;
 uniform mat3 Normal;
 
+out vec4 VertexColour;
+
 void main()
 {
+	VertexColour = vec4(iColour, 1.0);
 	gl_Position = MVP * vec4(iPosition, 1.0);
 }

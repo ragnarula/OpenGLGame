@@ -2,8 +2,8 @@
 #include "gl/glew.h"
 
 struct CMeshProperties {
-	GLuint m_VAO;
-	GLuint m_VBO;
-	size_t m_VertexCount;
+	GLuint VAO;
+	GLuint VBO;
+	size_t VertexCount;
 };
 

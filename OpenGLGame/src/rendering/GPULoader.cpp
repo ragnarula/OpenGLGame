@@ -98,7 +98,7 @@ void CGPULoader::BufferVertexData(const std::vector<Vertex> &Vertices, GLuint VB
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
 
-GLuint CGPULoader::GenerateVBO() {// create and bind vbo
+GLuint CGPULoader::GenerateVBO() {
 	GLuint vbo;
 	glGenBuffers(1, &vbo);
 	m_vbos.push_back(vbo);
@@ -162,12 +162,13 @@ GLuint CGPULoader::GenerateTexture() {
 }
 
 CMeshProperties CGPULoader::LoadMesh(std::vector<Vertex> &Vertices) {
-	GLuint vao = GenerateVAO();
-	glBindVertexArray(vao);
+	GLuint VAO = GenerateVAO();
+	glBindVertexArray(VAO);
 
-	GLuint vertexVbo = GenerateVBO();
-	BufferVertexData(Vertices, vertexVbo);
-	return { vao, (GLuint) -1, Vertices.size() };
+	GLuint VBO = GenerateVBO();
+	BufferVertexData(Vertices, VBO);
+	glBindVertexArray(0);
+	return { VAO, VBO, Vertices.size() };
 }
 
 
@@ -257,3 +258,7 @@ void CGPULoader::CheckShaderError(GLuint shader, GLuint flag, bool isProgram, co
 	}
 }
 
+GLuint CGPULoader::CreateShaderbuffer()
+{
+	return GenerateVBO();
+}

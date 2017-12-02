@@ -66,6 +66,9 @@
     <ClInclude Include="src\components\WorldObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\cameras\FixedCamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -96,6 +99,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\shaders\MainShader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cameras\FixedCamera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

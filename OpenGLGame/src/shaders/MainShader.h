@@ -2,12 +2,13 @@
 #include "gl/glew.h"
 #include "glm/glm.hpp"
 #include <vector>
-#include "rendering\LightProperties.h"
+#include "rendering/LightProperties.h"
 #include "rendering/ShaderProperties.h"
 
 class CMainShader
 {
 	CShaderProperties m_ShaderProperties;
+	GLuint m_LightBuffer;
 
 	GLint m_MVP;
 	GLint m_MV;
@@ -28,7 +29,7 @@ public:
 	void Unbind();
 
 	void SetMatrices(glm::mat4 Model, glm::mat4 View, glm::mat4 Projection);
+	void SetLightBuffer(GLuint LightBuffer);
 	void SetLightProperties(std::vector<CLightProperties> Lights);
-
 };
 

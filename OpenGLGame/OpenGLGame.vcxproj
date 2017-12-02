@@ -171,6 +171,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\cameras\FixedCamera.h" />
     <ClInclude Include="src\components\WorldObject.h" />
     <ClInclude Include="src\rendering\Camera.h" />
     <ClInclude Include="src\shaders\MainShader.h" />
@@ -190,6 +191,7 @@
     <ClInclude Include="src\components\TransformComponent.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\cameras\FixedCamera.cpp" />
     <ClCompile Include="src\shaders\MainShader.cpp" />
     <ClCompile Include="src\rendering\LightManager.cpp" />
     <ClCompile Include="src\components\LightComponent.cpp" />

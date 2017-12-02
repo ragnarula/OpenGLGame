@@ -29,7 +29,7 @@ public:
 	CMeshProperties LoadIndexedMesh(std::vector<Vertex> &Vertices, std::vector<unsigned int> &Indices);
 	CMeshProperties LoadMesh(std::vector<Vertex> &Vertices);
 	GLuint LoadTexture(const std::string& FileName);
+	GLuint CreateShaderbuffer();
 	
 	CShaderProperties LoadProgram(const std::string &fileName);
 };
-

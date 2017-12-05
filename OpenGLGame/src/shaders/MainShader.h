@@ -4,6 +4,7 @@
 #include <vector>
 #include "rendering/LightProperties.h"
 #include "rendering/ShaderProperties.h"
+#include "rendering/MaterialProperties.h"
 
 class CMainShader
 {
@@ -14,7 +15,12 @@ class CMainShader
 	GLint m_MV;
 	GLint m_Norm;
 
-	GLint m_Albedo;
+	GLint m_DiffuseMap;
+	GLint m_NormalMap;
+	GLint m_UseDiffuseMap;
+	GLint m_UseNormalMap;
+	GLint m_ADSSh;
+
 
 	GLint m_Lights;
 	GLint m_NumLights;
@@ -28,8 +34,10 @@ public:
 	void Bind();
 	void Unbind();
 
-	void SetMatrices(glm::mat4 Model, glm::mat4 View, glm::mat4 Projection);
+	void SetMatrices(const glm::mat4& Model, const glm::mat4& View, const glm::mat4& Projection);
 	void SetLightBuffer(GLuint LightBuffer);
 	void SetLightProperties(std::vector<CLightProperties> Lights);
+	void SetAlbedoTexture(GLuint Texture);
+	void SetMaterialProperties(CMaterialProperties& Material);
 };
 

@@ -11,7 +11,8 @@ public:
 	CLightManager();
 	~CLightManager();
 
-	size_t CreateLight(const glm::vec3& Colour, const glm::vec3& Position, const glm::vec3& Direction, float Intensity);
+	size_t CreateLight(const glm::vec4 & Colour, const glm::vec3 & Position, const glm::vec3 & Direction);
 	CLightProperties& GetLight(size_t LightNumber);
+	std::vector<CLightProperties>& GetLights();
 };
 

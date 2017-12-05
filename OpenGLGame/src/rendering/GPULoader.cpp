@@ -146,7 +146,7 @@ void CGPULoader::BufferImageData2d(const std::string &FileName, GLuint Id) const
 
 	glBindTexture(GL_TEXTURE_2D, Id);
 	// upload
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_BGRA, GL_UNSIGNED_BYTE, data);
 
 	// free
 	FreeImage_Unload(image);

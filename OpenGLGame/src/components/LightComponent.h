@@ -15,7 +15,7 @@ public:
 
 	CLightComponent(CWorldObject& Owner);
 	~CLightComponent();
-	void Initialise(const glm::vec3 & Colour, float Intensity, CLightManager* LightManager);
+	void Initialise(const glm::vec4 & Colour, CLightManager * LightManager);
 
 	CLightProperties& GetLight();
 	void Tick(float DeltaTime);

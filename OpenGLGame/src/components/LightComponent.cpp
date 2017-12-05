@@ -12,7 +12,7 @@ CLightComponent::~CLightComponent()
 {
 }
 
-void CLightComponent::Initialise(const glm::vec3 & Colour, float Intensity, CLightManager * LightManager)
+void CLightComponent::Initialise(const glm::vec4 & Colour, CLightManager * LightManager)
 {
 	m_LightManager = LightManager;
 	
@@ -21,7 +21,7 @@ void CLightComponent::Initialise(const glm::vec3 & Colour, float Intensity, CLig
 	glm::vec3 Position = glm::vec3(TotalTransform * glm::vec4(0.0, 0.0, 0.0, 1.0));
 	glm::vec3 Direction = glm::vec3(TotalTransform * glm::vec4(0.0, 0.0, -1.0, 1.0));
 	
-	m_LightNumber = LightManager->CreateLight(Colour, Position, Direction, Intensity);
+	m_LightNumber = LightManager->CreateLight(Colour, Position, Direction);
 }
 
 CLightProperties & CLightComponent::GetLight()
@@ -36,8 +36,8 @@ void CLightComponent::Tick(float DeltaTime)
 
 	glm::mat4 TotalTransform = m_Owner.Transform.GetMatrix() * Transform.GetMatrix();
 
-	glm::vec3 Position = glm::vec3(TotalTransform * glm::vec4(0.0, 0.0, 0.0, 1.0));
-	glm::vec3 Direction = glm::vec3(TotalTransform * glm::vec4(0.0, 0.0, -1.0, 1.0));
+	glm::vec4 Position = TotalTransform * glm::vec4(0.0, 0.0, 0.0, 1.0);
+	glm::vec4 Direction = TotalTransform * glm::vec4(0.0, 0.0, -1.0, 1.0);
 
 	auto& LightProperties = m_LightManager->GetLight(m_LightNumber);
 

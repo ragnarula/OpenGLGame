@@ -70,6 +70,6 @@ void main()
 
 	vec4 LinearColour = SurfaceColour * vec4(LightColour, 1.0);
 	vec4 GammaCorrectedColour = vec4(pow(LinearColour.xyz, vec3(1.0/2.2)), LinearColour.w);
-    //FragColor = GammaCorrectedColour;
-    FragColor = texture(DiffuseMap, UV);
+    FragColor = GammaCorrectedColour;
+    //FragColor = texture(DiffuseMap, UV);
 }

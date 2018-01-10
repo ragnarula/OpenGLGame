@@ -91,7 +91,7 @@ void CGPULoader::BufferVertexData(const std::vector<Vertex> &Vertices, GLuint VB
 	glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid *)(sizeof(glm::vec3) * 2));
 
 	// Enable uv attrib
-	glEnableVertexAttribArray(2);
+	glEnableVertexAttribArray(3);
 	glVertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid *)(sizeof(glm::vec3) * 3));
 
 	// Unbind VBO

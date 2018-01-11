@@ -12,7 +12,7 @@ uniform mat3 Normal;
 out vec4 VertexColour;
 out vec4 EyePosition;
 out vec3 EyeNormal;
-out varying vec2 UV;
+out vec2 UV;
 
 void main()
 {

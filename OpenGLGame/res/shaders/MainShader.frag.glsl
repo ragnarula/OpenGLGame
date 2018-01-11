@@ -22,7 +22,7 @@ layout (std430, binding = 1) buffer LightsBuffer {
 in vec4 VertexColour;
 in vec4 EyePosition;
 in vec3 EyeNormal;
-in varying vec2 UV;
+in vec2 UV;
 
 out vec4 FragColor;
 

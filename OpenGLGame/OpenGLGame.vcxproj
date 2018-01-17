@@ -212,8 +212,6 @@
   <ItemGroup>
     <None Include="res\shaders\MainShader.frag.glsl" />
     <None Include="res\shaders\MainShader.vert.glsl" />
-    <None Include="res\shaders\BasicShader.frag.glsl" />
-    <None Include="res\shaders\BAsicShader.vert.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
